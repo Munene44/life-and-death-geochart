@@ -1,0 +1,27 @@
+<%= form_with(model: geo, local: true) do |form| %>
+  <% if geo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(geo.errors.count, "error") %> prohibited this geo from being saved:</h2>
+
+      <ul>
+        <% geo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expectancy %>
+    <%= form.text_field :expectancy %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
