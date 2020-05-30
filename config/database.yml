@@ -19,14 +19,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  pool: 5432
 
-development:
-  <<: *default
-  database: life
-  username: life
-  password: '12345678'
-
+ database: myapp_test
+  host: localhost
+  port: 5432
+  username: rails_dev
+  password: aqwe123
 
 
 
