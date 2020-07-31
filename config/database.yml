@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: geo_development
   pool: 5
-  username: geo
-  password: 123456
+  username: geochart
+  password: <%= ENV['GEOCHART_DATABASE_PASSWORD'] %>
 
 
 
@@ -59,9 +59,10 @@ development:
 test:
   <<: *default
   database: geo_test
-  username: geo
-  password: 123456
+  username: geochart
+  password: <%= ENV['GEOCHART_DATABASE_PASSWORD'] %>
 
+  pool: 5
   host: localhost
   port: 5432
 
